@@ -1,0 +1,81 @@
+{
+  "counts": {
+    "bc_compared": 600,
+    "bc_same_body": 527,
+    "bc_different_body": 73,
+    "bc_c_adds_only_verified_chrome": 527,
+    "bc_original_audit_equal": 527,
+    "bc_original_vs_strict_disagreements": 0,
+    "gt_compared": 300,
+    "gt_same_as_a": 300,
+    "pdf_gt_compared": 24,
+    "pdf_gt_with_verified_chrome": 3
+  },
+  "by_split_and_category": {
+    "evaluation/blog": {
+      "total": 100,
+      "same_body": 100,
+      "different_body": 0
+    },
+    "evaluation/docs": {
+      "total": 100,
+      "same_body": 100,
+      "different_body": 0
+    },
+    "evaluation/ecommerce": {
+      "total": 150,
+      "same_body": 147,
+      "different_body": 3
+    },
+    "evaluation/news": {
+      "total": 60,
+      "same_body": 60,
+      "different_body": 0
+    },
+    "evaluation/other": {
+      "total": 25,
+      "same_body": 25,
+      "different_body": 0
+    },
+    "evaluation/pdf": {
+      "total": 40,
+      "same_body": 0,
+      "different_body": 40
+    },
+    "evaluation/spa": {
+      "total": 25,
+      "same_body": 25,
+      "different_body": 0
+    },
+    "production/docs": {
+      "total": 15,
+      "same_body": 15,
+      "different_body": 0
+    },
+    "production/ecommerce": {
+      "total": 25,
+      "same_body": 25,
+      "different_body": 0
+    },
+    "production/other": {
+      "total": 15,
+      "same_body": 15,
+      "different_body": 0
+    },
+    "production/pdf": {
+      "total": 30,
+      "same_body": 0,
+      "different_body": 30
+    },
+    "production/spa": {
+      "total": 15,
+      "same_body": 15,
+      "different_body": 0
+    }
+  },
+  "notes": [
+    "Same body means identical nonblank lines after narrow chrome removal.",
+    "Different body may include formatting-only differences; inspect the CSV.",
+    "Matches and disagreements do not establish which extraction is correct."
+  ]
+}

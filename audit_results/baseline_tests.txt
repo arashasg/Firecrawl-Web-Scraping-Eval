@@ -1,0 +1,45 @@
+warning: `VIRTUAL_ENV=/home/arashasg/projects/adk_tutorial/.adk_env` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+============================= test session starts ==============================
+platform linux -- Python 3.12.7, pytest-8.4.2, pluggy-1.7.0 -- /home/arashasg/projects/adk_tutorial/.adk_env/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/arashasg/projects/adk_tutorial/Final Eval/solid-octo-train
+configfile: pyproject.toml
+plugins: platformdirs-4.14.5, anyio-4.16.0, asyncio-1.2.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 21 items
+
+eval/test_metrics.py::test_identical_long_content_scores_one[compute_f1] PASSED [  4%]
+eval/test_metrics.py::test_identical_long_content_scores_one[compute_f0_5] PASSED [  9%]
+eval/test_metrics.py::test_partial_content_has_expected_f_scores PASSED  [ 14%]
+eval/test_metrics.py::test_empty_output_scores_zero_against_nonempty_reference[compute_f1] PASSED [ 19%]
+eval/test_metrics.py::test_empty_output_scores_zero_against_nonempty_reference[compute_f0_5] PASSED [ 23%]
+eval/test_metrics.py::test_missing_short_price_should_lower_score[compute_f1] XFAIL [ 28%]
+eval/test_metrics.py::test_missing_short_price_should_lower_score[compute_f0_5] XFAIL [ 33%]
+eval/test_metrics.py::test_numeric_corruption_must_lower_score[compute_f1] XFAIL [ 38%]
+eval/test_metrics.py::test_numeric_corruption_must_lower_score[compute_f0_5] XFAIL [ 42%]
+eval/test_metrics.py::test_duplicated_paragraph_must_lower_precision[compute_f1] XFAIL [ 47%]
+eval/test_metrics.py::test_duplicated_paragraph_must_lower_precision[compute_f0_5] XFAIL [ 52%]
+eval/test_metrics.py::test_missing_short_price_field_must_lower_recall XFAIL [ 57%]
+eval/test_metrics.py::test_completeness_recognizes_preserved_headings PASSED [ 61%]
+eval/test_metrics.py::test_completeness_detects_missing_heading PASSED   [ 66%]
+eval/test_metrics.py::test_missing_body_text_must_lower_completeness XFAIL [ 71%]
+eval/test_metrics.py::test_unrelated_heading_substring_must_not_match XFAIL [ 76%]
+eval/test_metrics.py::test_latency_percentiles_are_mathematically_correct PASSED [ 80%]
+eval/test_metrics.py::test_error_rate_counts_http_failures_and_empty_markdown PASSED [ 85%]
+eval/test_metrics.py::test_error_rate_only_measures_transport_and_nonempty_output PASSED [ 90%]
+eval/test_metrics.py::test_missing_http_status_must_not_count_as_success XFAIL [ 95%]
+eval/test_metrics.py::test_judge_should_include_ground_truth XFAIL (...) [100%]
+
+=========================== short test summary info ============================
+XFAIL eval/test_metrics.py::test_missing_short_price_should_lower_score[compute_f1] - Short fields are excluded from snippet matching
+XFAIL eval/test_metrics.py::test_missing_short_price_should_lower_score[compute_f0_5] - Short fields are excluded from snippet matching
+XFAIL eval/test_metrics.py::test_numeric_corruption_must_lower_score[compute_f1] - Jaccard >= 0.6 accepts a corrupted price as a match
+XFAIL eval/test_metrics.py::test_numeric_corruption_must_lower_score[compute_f0_5] - Jaccard >= 0.6 accepts a corrupted price as a match
+XFAIL eval/test_metrics.py::test_duplicated_paragraph_must_lower_precision[compute_f1] - any() permits several output snippets to reuse one reference snippet
+XFAIL eval/test_metrics.py::test_duplicated_paragraph_must_lower_precision[compute_f0_5] - any() permits several output snippets to reuse one reference snippet
+XFAIL eval/test_metrics.py::test_missing_short_price_field_must_lower_recall - Snippet splitter silently drops important fields under five words
+XFAIL eval/test_metrics.py::test_missing_body_text_must_lower_completeness - Headings alone can achieve completeness=1 even with all body content missing
+XFAIL eval/test_metrics.py::test_unrelated_heading_substring_must_not_match - Loose substring matching equates unrelated headings
+XFAIL eval/test_metrics.py::test_missing_http_status_must_not_count_as_success - Missing status silently defaults to HTTP 200
+XFAIL eval/test_metrics.py::test_judge_should_include_ground_truth - LLM judge prompt does not include ground truth
+======================== 10 passed, 11 xfailed in 5.02s ========================

@@ -1,0 +1,603 @@
+{
+  "integrity": {
+    "evaluation_urls": 500,
+    "production_urls": 100,
+    "unique_urls": 600,
+    "unique_hashes": 600,
+    "bad_sha256_hashes": 0,
+    "overlap_between_splits": 0,
+    "ground_truth_files": 300,
+    "ground_truth_for_eval_urls": 300,
+    "orphan_ground_truth": 0,
+    "cache_missing_files": {
+      "a": 0,
+      "b": 0,
+      "c": 0
+    },
+    "unique_domains": 20,
+    "top_domains": [
+      [
+        "shop.example.com",
+        59
+      ],
+      [
+        "marketplace.test.io",
+        58
+      ],
+      [
+        "store.demo.com",
+        58
+      ],
+      [
+        "docs.example.com",
+        39
+      ],
+      [
+        "developer.demo.net",
+        38
+      ],
+      [
+        "api.testlib.io",
+        38
+      ],
+      [
+        "blog.example.com",
+        34
+      ],
+      [
+        "wordpress.demo.org",
+        33
+      ]
+    ]
+  },
+  "categories": {
+    "blog": {
+      "eval": 100,
+      "production": 0,
+      "ground_truth": 68,
+      "annotation_coverage_pct": 68.0,
+      "eval_share_pct": 20.0,
+      "production_share_pct": 0.0
+    },
+    "docs": {
+      "eval": 100,
+      "production": 15,
+      "ground_truth": 55,
+      "annotation_coverage_pct": 55.0,
+      "eval_share_pct": 20.0,
+      "production_share_pct": 15.0
+    },
+    "ecommerce": {
+      "eval": 150,
+      "production": 25,
+      "ground_truth": 87,
+      "annotation_coverage_pct": 58.0,
+      "eval_share_pct": 30.0,
+      "production_share_pct": 25.0
+    },
+    "news": {
+      "eval": 60,
+      "production": 0,
+      "ground_truth": 39,
+      "annotation_coverage_pct": 65.0,
+      "eval_share_pct": 12.0,
+      "production_share_pct": 0.0
+    },
+    "other": {
+      "eval": 25,
+      "production": 15,
+      "ground_truth": 13,
+      "annotation_coverage_pct": 52.0,
+      "eval_share_pct": 5.0,
+      "production_share_pct": 15.0
+    },
+    "pdf": {
+      "eval": 40,
+      "production": 30,
+      "ground_truth": 24,
+      "annotation_coverage_pct": 60.0,
+      "eval_share_pct": 8.0,
+      "production_share_pct": 30.0
+    },
+    "spa": {
+      "eval": 25,
+      "production": 15,
+      "ground_truth": 14,
+      "annotation_coverage_pct": 56.0,
+      "eval_share_pct": 5.0,
+      "production_share_pct": 15.0
+    }
+  },
+  "numeric_prevalence_ground_truth": {
+    "pages": 300,
+    "with_numbers": 245,
+    "with_numbers_pct": 81.7,
+    "by_category": {
+      "pdf": {
+        "pages": 24,
+        "pages_with_numbers": 24,
+        "number_occurrences": 156,
+        "prevalence_pct": 100.0
+      },
+      "blog": {
+        "pages": 68,
+        "pages_with_numbers": 68,
+        "number_occurrences": 624,
+        "prevalence_pct": 100.0
+      },
+      "docs": {
+        "pages": 55,
+        "pages_with_numbers": 0,
+        "number_occurrences": 0,
+        "prevalence_pct": 0.0
+      },
+      "ecommerce": {
+        "pages": 87,
+        "pages_with_numbers": 87,
+        "number_occurrences": 627,
+        "prevalence_pct": 100.0
+      },
+      "news": {
+        "pages": 39,
+        "pages_with_numbers": 39,
+        "number_occurrences": 39,
+        "prevalence_pct": 100.0
+      },
+      "other": {
+        "pages": 13,
+        "pages_with_numbers": 13,
+        "number_occurrences": 52,
+        "prevalence_pct": 100.0
+      },
+      "spa": {
+        "pages": 14,
+        "pages_with_numbers": 14,
+        "number_occurrences": 98,
+        "prevalence_pct": 100.0
+      }
+    }
+  },
+  "numeric_disagreement_vs_reference": {
+    "a": {
+      "compared": 300,
+      "different": 0,
+      "different_pct": 0.0,
+      "examples": []
+    },
+    "b": {
+      "compared": 300,
+      "different": 169,
+      "different_pct": 56.3,
+      "examples": [
+        "https://blog.example.com/posts/211-how-to-guide",
+        "https://wordpress.demo.org/222/tech-tutorial",
+        "https://marketplace.test.io/listing/15",
+        "https://shop.example.com/products/97",
+        "https://store.demo.com/item/95"
+      ]
+    },
+    "c": {
+      "compared": 300,
+      "different": 193,
+      "different_pct": 64.3,
+      "examples": [
+        "https://blog.example.com/posts/211-how-to-guide",
+        "https://wordpress.demo.org/222/tech-tutorial",
+        "https://marketplace.test.io/listing/15",
+        "https://shop.example.com/products/97",
+        "https://store.demo.com/item/95"
+      ]
+    }
+  },
+  "pairwise_output_comparison": {
+    "a_vs_b": {
+      "compared": 600,
+      "numeric_disagreement": 315,
+      "numeric_disagreement_pct": 52.5,
+      "same_after_chrome_removal": 0,
+      "only_extra_nav_footer_in_second": 0,
+      "chrome_only_examples": []
+    },
+    "a_vs_c": {
+      "compared": 600,
+      "numeric_disagreement": 385,
+      "numeric_disagreement_pct": 64.2,
+      "same_after_chrome_removal": 0,
+      "only_extra_nav_footer_in_second": 0,
+      "chrome_only_examples": []
+    },
+    "b_vs_c": {
+      "compared": 600,
+      "numeric_disagreement": 70,
+      "numeric_disagreement_pct": 11.7,
+      "same_after_chrome_removal": 527,
+      "only_extra_nav_footer_in_second": 527,
+      "chrome_only_examples": [
+        "https://app.example.com/dashboard/10034",
+        "https://wordpress.demo.org/177/tech-tutorial",
+        "https://blog.example.com/posts/211-how-to-guide",
+        "https://misc.example.com/page/496",
+        "https://store.demo.com/item/17"
+      ]
+    }
+  },
+  "duplicates": {
+    "gt": {
+      "raw": {
+        "groups": 19,
+        "extra_copies": 33,
+        "examples": [
+          [
+            "https://docs.example.com/v2/guide/269",
+            "https://docs.example.com/v2/guide/293",
+            "https://docs.example.com/v2/guide/338",
+            "https://docs.example.com/v2/guide/287",
+            "https://docs.example.com/v2/guide/278"
+          ],
+          [
+            "https://developer.demo.net/docs/346",
+            "https://developer.demo.net/docs/262",
+            "https://developer.demo.net/docs/265",
+            "https://developer.demo.net/docs/319"
+          ],
+          [
+            "https://developer.demo.net/docs/301",
+            "https://developer.demo.net/docs/295",
+            "https://developer.demo.net/docs/268",
+            "https://developer.demo.net/docs/316"
+          ],
+          [
+            "https://api.testlib.io/reference/258",
+            "https://api.testlib.io/reference/315",
+            "https://api.testlib.io/reference/285",
+            "https://api.testlib.io/reference/342"
+          ],
+          [
+            "https://api.testlib.io/reference/282",
+            "https://api.testlib.io/reference/264",
+            "https://api.testlib.io/reference/255",
+            "https://api.testlib.io/reference/279"
+          ]
+        ]
+      },
+      "without_nav_footer": {
+        "groups": 17,
+        "extra_copies": 57,
+        "examples": [
+          [
+            "https://developer.demo.net/docs/346",
+            "https://docs.example.com/v2/guide/269",
+            "https://docs.example.com/v2/guide/293",
+            "https://docs.example.com/v2/guide/338",
+            "https://api.testlib.io/reference/282"
+          ],
+          [
+            "https://developer.demo.net/docs/301",
+            "https://docs.example.com/v2/guide/308",
+            "https://developer.demo.net/docs/295",
+            "https://api.testlib.io/reference/324",
+            "https://api.testlib.io/reference/252"
+          ],
+          [
+            "https://api.testlib.io/reference/327",
+            "https://developer.demo.net/docs/298",
+            "https://api.testlib.io/reference/273",
+            "https://developer.demo.net/docs/343",
+            "https://docs.example.com/v2/guide/341"
+          ],
+          [
+            "https://developer.demo.net/docs/313",
+            "https://api.testlib.io/reference/258",
+            "https://docs.example.com/v2/guide/311",
+            "https://api.testlib.io/reference/315",
+            "https://api.testlib.io/reference/285"
+          ],
+          [
+            "https://docs.example.com/v2/guide/263",
+            "https://api.testlib.io/reference/321",
+            "https://developer.demo.net/docs/349",
+            "https://docs.example.com/v2/guide/305",
+            "https://docs.example.com/v2/guide/335"
+          ]
+        ]
+      }
+    },
+    "a": {
+      "raw": {
+        "groups": 24,
+        "extra_copies": 125,
+        "examples": [
+          [
+            "https://developer.demo.net/docs/301",
+            "https://developer.demo.net/docs/277",
+            "https://developer.demo.net/docs/10082",
+            "https://docs.example.com/v2/guide/308",
+            "https://api.testlib.io/reference/303"
+          ],
+          [
+            "https://developer.demo.net/docs/346",
+            "https://docs.example.com/v2/guide/269",
+            "https://docs.example.com/v2/guide/293",
+            "https://developer.demo.net/docs/283",
+            "https://docs.example.com/v2/guide/338"
+          ],
+          [
+            "https://api.testlib.io/reference/339",
+            "https://docs.example.com/v2/guide/263",
+            "https://docs.example.com/v2/guide/275",
+            "https://api.testlib.io/reference/300",
+            "https://api.testlib.io/reference/321"
+          ],
+          [
+            "https://api.testlib.io/reference/10075",
+            "https://docs.example.com/v2/guide/10071",
+            "https://developer.demo.net/docs/310",
+            "https://docs.example.com/v2/guide/254",
+            "https://api.testlib.io/reference/312"
+          ],
+          [
+            "https://docs.example.com/v2/guide/350",
+            "https://api.testlib.io/reference/348",
+            "https://docs.example.com/v2/guide/344",
+            "https://developer.demo.net/docs/337",
+            "https://docs.example.com/v2/guide/10074"
+          ]
+        ]
+      },
+      "without_nav_footer": {
+        "groups": 24,
+        "extra_copies": 125,
+        "examples": [
+          [
+            "https://developer.demo.net/docs/301",
+            "https://developer.demo.net/docs/277",
+            "https://developer.demo.net/docs/10082",
+            "https://docs.example.com/v2/guide/308",
+            "https://api.testlib.io/reference/303"
+          ],
+          [
+            "https://developer.demo.net/docs/346",
+            "https://docs.example.com/v2/guide/269",
+            "https://docs.example.com/v2/guide/293",
+            "https://developer.demo.net/docs/283",
+            "https://docs.example.com/v2/guide/338"
+          ],
+          [
+            "https://api.testlib.io/reference/339",
+            "https://docs.example.com/v2/guide/263",
+            "https://docs.example.com/v2/guide/275",
+            "https://api.testlib.io/reference/300",
+            "https://api.testlib.io/reference/321"
+          ],
+          [
+            "https://api.testlib.io/reference/10075",
+            "https://docs.example.com/v2/guide/10071",
+            "https://developer.demo.net/docs/310",
+            "https://docs.example.com/v2/guide/254",
+            "https://api.testlib.io/reference/312"
+          ],
+          [
+            "https://docs.example.com/v2/guide/350",
+            "https://api.testlib.io/reference/348",
+            "https://docs.example.com/v2/guide/344",
+            "https://developer.demo.net/docs/337",
+            "https://docs.example.com/v2/guide/10074"
+          ]
+        ]
+      }
+    },
+    "b": {
+      "raw": {
+        "groups": 24,
+        "extra_copies": 125,
+        "examples": [
+          [
+            "https://developer.demo.net/docs/301",
+            "https://developer.demo.net/docs/277",
+            "https://developer.demo.net/docs/10082",
+            "https://docs.example.com/v2/guide/308",
+            "https://api.testlib.io/reference/303"
+          ],
+          [
+            "https://developer.demo.net/docs/346",
+            "https://docs.example.com/v2/guide/269",
+            "https://docs.example.com/v2/guide/293",
+            "https://developer.demo.net/docs/283",
+            "https://docs.example.com/v2/guide/338"
+          ],
+          [
+            "https://api.testlib.io/reference/339",
+            "https://docs.example.com/v2/guide/263",
+            "https://docs.example.com/v2/guide/275",
+            "https://api.testlib.io/reference/300",
+            "https://api.testlib.io/reference/321"
+          ],
+          [
+            "https://api.testlib.io/reference/10075",
+            "https://docs.example.com/v2/guide/10071",
+            "https://developer.demo.net/docs/310",
+            "https://docs.example.com/v2/guide/254",
+            "https://api.testlib.io/reference/312"
+          ],
+          [
+            "https://docs.example.com/v2/guide/350",
+            "https://api.testlib.io/reference/348",
+            "https://docs.example.com/v2/guide/344",
+            "https://developer.demo.net/docs/337",
+            "https://docs.example.com/v2/guide/10074"
+          ]
+        ]
+      },
+      "without_nav_footer": {
+        "groups": 24,
+        "extra_copies": 125,
+        "examples": [
+          [
+            "https://developer.demo.net/docs/301",
+            "https://developer.demo.net/docs/277",
+            "https://developer.demo.net/docs/10082",
+            "https://docs.example.com/v2/guide/308",
+            "https://api.testlib.io/reference/303"
+          ],
+          [
+            "https://developer.demo.net/docs/346",
+            "https://docs.example.com/v2/guide/269",
+            "https://docs.example.com/v2/guide/293",
+            "https://developer.demo.net/docs/283",
+            "https://docs.example.com/v2/guide/338"
+          ],
+          [
+            "https://api.testlib.io/reference/339",
+            "https://docs.example.com/v2/guide/263",
+            "https://docs.example.com/v2/guide/275",
+            "https://api.testlib.io/reference/300",
+            "https://api.testlib.io/reference/321"
+          ],
+          [
+            "https://api.testlib.io/reference/10075",
+            "https://docs.example.com/v2/guide/10071",
+            "https://developer.demo.net/docs/310",
+            "https://docs.example.com/v2/guide/254",
+            "https://api.testlib.io/reference/312"
+          ],
+          [
+            "https://docs.example.com/v2/guide/350",
+            "https://api.testlib.io/reference/348",
+            "https://docs.example.com/v2/guide/344",
+            "https://developer.demo.net/docs/337",
+            "https://docs.example.com/v2/guide/10074"
+          ]
+        ]
+      }
+    },
+    "c": {
+      "raw": {
+        "groups": 28,
+        "extra_copies": 95,
+        "examples": [
+          [
+            "https://developer.demo.net/docs/301",
+            "https://developer.demo.net/docs/277",
+            "https://developer.demo.net/docs/10082",
+            "https://developer.demo.net/docs/295",
+            "https://developer.demo.net/docs/268"
+          ],
+          [
+            "https://docs.example.com/v2/guide/263",
+            "https://docs.example.com/v2/guide/275",
+            "https://docs.example.com/v2/guide/284",
+            "https://docs.example.com/v2/guide/10077",
+            "https://docs.example.com/v2/guide/302"
+          ],
+          [
+            "https://developer.demo.net/docs/346",
+            "https://developer.demo.net/docs/283",
+            "https://developer.demo.net/docs/262",
+            "https://developer.demo.net/docs/265",
+            "https://developer.demo.net/docs/286"
+          ],
+          [
+            "https://api.testlib.io/reference/258",
+            "https://api.testlib.io/reference/315",
+            "https://api.testlib.io/reference/285",
+            "https://api.testlib.io/reference/342",
+            "https://api.testlib.io/reference/336"
+          ],
+          [
+            "https://developer.demo.net/docs/310",
+            "https://developer.demo.net/docs/256",
+            "https://developer.demo.net/docs/322",
+            "https://developer.demo.net/docs/331",
+            "https://developer.demo.net/docs/334"
+          ]
+        ]
+      },
+      "without_nav_footer": {
+        "groups": 26,
+        "extra_copies": 127,
+        "examples": [
+          [
+            "https://developer.demo.net/docs/301",
+            "https://developer.demo.net/docs/277",
+            "https://developer.demo.net/docs/10082",
+            "https://docs.example.com/v2/guide/308",
+            "https://api.testlib.io/reference/303"
+          ],
+          [
+            "https://developer.demo.net/docs/346",
+            "https://docs.example.com/v2/guide/269",
+            "https://docs.example.com/v2/guide/293",
+            "https://developer.demo.net/docs/283",
+            "https://docs.example.com/v2/guide/338"
+          ],
+          [
+            "https://api.testlib.io/reference/339",
+            "https://docs.example.com/v2/guide/263",
+            "https://docs.example.com/v2/guide/275",
+            "https://api.testlib.io/reference/300",
+            "https://api.testlib.io/reference/321"
+          ],
+          [
+            "https://api.testlib.io/reference/10075",
+            "https://docs.example.com/v2/guide/10071",
+            "https://developer.demo.net/docs/310",
+            "https://docs.example.com/v2/guide/254",
+            "https://api.testlib.io/reference/312"
+          ],
+          [
+            "https://docs.example.com/v2/guide/350",
+            "https://api.testlib.io/reference/348",
+            "https://docs.example.com/v2/guide/344",
+            "https://developer.demo.net/docs/337",
+            "https://docs.example.com/v2/guide/10074"
+          ]
+        ]
+      }
+    }
+  },
+  "ground_truth_chrome_and_provenance": {
+    "refs_with_nav_or_footer": 279,
+    "pdf_refs_with_nav_or_footer": 3,
+    "pdf_reference_count": 24,
+    "gt_matches_engine_a_after_removing_nav_footer": 300,
+    "gt_compared_to_engine_a": 300,
+    "gt_variant_groups_differing_only_in_nav_footer": 16,
+    "gt_variant_examples": [
+      [
+        "https://developer.demo.net/docs/346",
+        "https://docs.example.com/v2/guide/269",
+        "https://docs.example.com/v2/guide/293",
+        "https://docs.example.com/v2/guide/338",
+        "https://api.testlib.io/reference/282"
+      ],
+      [
+        "https://news.example.com/2024/369/breaking-story",
+        "https://press.testmedia.com/article/355"
+      ],
+      [
+        "https://developer.demo.net/docs/301",
+        "https://docs.example.com/v2/guide/308",
+        "https://developer.demo.net/docs/295",
+        "https://api.testlib.io/reference/324",
+        "https://api.testlib.io/reference/252"
+      ],
+      [
+        "https://api.testlib.io/reference/327",
+        "https://developer.demo.net/docs/298",
+        "https://api.testlib.io/reference/273",
+        "https://developer.demo.net/docs/343",
+        "https://docs.example.com/v2/guide/341"
+      ],
+      [
+        "https://news.example.com/2024/366/breaking-story",
+        "https://press.testmedia.com/article/403"
+      ]
+    ]
+  },
+  "caveats": [
+    "Differences in numbers are discrepancies, not verified factual errors.",
+    "Navigation/footer removal detects only explicitly labeled sections.",
+    "Duplicates use exact text after case/whitespace normalization; near-duplicates remain for v2.",
+    "Ground truth is engine-derived; similarity to an engine is not proof of correctness."
+  ]
+}

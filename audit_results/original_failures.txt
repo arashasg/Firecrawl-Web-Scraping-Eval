@@ -1,0 +1,100 @@
+warning: `VIRTUAL_ENV=/home/arashasg/projects/adk_tutorial/.adk_env` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+============================= test session starts ==============================
+platform linux -- Python 3.12.7, pytest-8.4.2, pluggy-1.7.0 -- /home/arashasg/projects/adk_tutorial/.adk_env/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/arashasg/projects/adk_tutorial/Final Eval/solid-octo-train
+configfile: pyproject.toml
+plugins: platformdirs-4.14.5, anyio-4.16.0, asyncio-1.2.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 21 items
+
+eval/test_metrics.py::test_identical_long_content_scores_one[compute_f1] PASSED [  4%]
+eval/test_metrics.py::test_identical_long_content_scores_one[compute_f0_5] PASSED [  9%]
+eval/test_metrics.py::test_partial_content_has_expected_f_scores PASSED  [ 14%]
+eval/test_metrics.py::test_empty_output_scores_zero_against_nonempty_reference[compute_f1] PASSED [ 19%]
+eval/test_metrics.py::test_empty_output_scores_zero_against_nonempty_reference[compute_f0_5] PASSED [ 23%]
+eval/test_metrics.py::test_missing_short_price_should_lower_score[compute_f1] FAILED [ 28%]
+eval/test_metrics.py::test_missing_short_price_should_lower_score[compute_f0_5] FAILED [ 33%]
+eval/test_metrics.py::test_numeric_corruption_must_lower_score[compute_f1] FAILED [ 38%]
+eval/test_metrics.py::test_numeric_corruption_must_lower_score[compute_f0_5] FAILED [ 42%]
+eval/test_metrics.py::test_duplicated_paragraph_must_lower_precision[compute_f1] FAILED [ 47%]
+eval/test_metrics.py::test_duplicated_paragraph_must_lower_precision[compute_f0_5] FAILED [ 52%]
+eval/test_metrics.py::test_missing_short_price_field_must_lower_recall FAILED [ 57%]
+eval/test_metrics.py::test_completeness_recognizes_preserved_headings PASSED [ 61%]
+eval/test_metrics.py::test_completeness_detects_missing_heading PASSED   [ 66%]
+eval/test_metrics.py::test_missing_body_text_must_lower_completeness FAILED [ 71%]
+eval/test_metrics.py::test_unrelated_heading_substring_must_not_match FAILED [ 76%]
+eval/test_metrics.py::test_latency_percentiles_are_mathematically_correct PASSED [ 80%]
+eval/test_metrics.py::test_error_rate_counts_http_failures_and_empty_markdown PASSED [ 85%]
+eval/test_metrics.py::test_error_rate_only_measures_transport_and_nonempty_output PASSED [ 90%]
+eval/test_metrics.py::test_missing_http_status_must_not_count_as_success FAILED [ 95%]
+eval/test_metrics.py::test_judge_should_include_ground_truth FAILED      [100%]
+
+=================================== FAILURES ===================================
+___________ test_missing_short_price_should_lower_score[compute_f1] ____________
+eval/test_metrics.py:61: in test_missing_short_price_should_lower_score
+    assert metric(output, reference) < 1.0
+E   AssertionError: assert 1.0 < 1.0
+E    +  where 1.0 = <function compute_f1 at 0x7f151221fc40>('The laptop includes a powerful processor and excellent battery life.', 'Price: $1200\n\n    The laptop includes a powerful processor and excellent battery life.')
+__________ test_missing_short_price_should_lower_score[compute_f0_5] ___________
+eval/test_metrics.py:61: in test_missing_short_price_should_lower_score
+    assert metric(output, reference) < 1.0
+E   AssertionError: assert 1.0 < 1.0
+E    +  where 1.0 = <function compute_f0_5 at 0x7f151221fce0>('The laptop includes a powerful processor and excellent battery life.', 'Price: $1200\n\n    The laptop includes a powerful processor and excellent battery life.')
+_____________ test_numeric_corruption_must_lower_score[compute_f1] _____________
+eval/test_metrics.py:70: in test_numeric_corruption_must_lower_score
+    assert metric(output, reference) < 1.0
+E   AssertionError: assert 1.0 < 1.0
+E    +  where 1.0 = <function compute_f1 at 0x7f151221fc40>('The laptop costs 120 dollars', 'The laptop costs 1200 dollars')
+____________ test_numeric_corruption_must_lower_score[compute_f0_5] ____________
+eval/test_metrics.py:70: in test_numeric_corruption_must_lower_score
+    assert metric(output, reference) < 1.0
+E   AssertionError: assert 1.0 < 1.0
+E    +  where 1.0 = <function compute_f0_5 at 0x7f151221fce0>('The laptop costs 120 dollars', 'The laptop costs 1200 dollars')
+__________ test_duplicated_paragraph_must_lower_precision[compute_f1] __________
+eval/test_metrics.py:79: in test_duplicated_paragraph_must_lower_precision
+    assert metric(output, reference) < 1.0
+E   AssertionError: assert 1.0 < 1.0
+E    +  where 1.0 = <function compute_f1 at 0x7f151221fc40>('The laptop includes a powerful processor and excellent battery life.\n\nThe laptop includes a powerful processor and excellent battery life.', 'The laptop includes a powerful processor and excellent battery life.')
+_________ test_duplicated_paragraph_must_lower_precision[compute_f0_5] _________
+eval/test_metrics.py:79: in test_duplicated_paragraph_must_lower_precision
+    assert metric(output, reference) < 1.0
+E   AssertionError: assert 1.0 < 1.0
+E    +  where 1.0 = <function compute_f0_5 at 0x7f151221fce0>('The laptop includes a powerful processor and excellent battery life.\n\nThe laptop includes a powerful processor and excellent battery life.', 'The laptop includes a powerful processor and excellent battery life.')
+_______________ test_missing_short_price_field_must_lower_recall _______________
+eval/test_metrics.py:87: in test_missing_short_price_field_must_lower_recall
+    assert compute_f1(paragraph, reference) < 1.0
+E   AssertionError: assert 1.0 < 1.0
+E    +  where 1.0 = compute_f1('The laptop includes a powerful processor and excellent battery life.', 'The laptop includes a powerful processor and excellent battery life.\n\nPrice: $1200')
+________________ test_missing_body_text_must_lower_completeness ________________
+eval/test_metrics.py:107: in test_missing_body_text_must_lower_completeness
+    assert compute_completeness(output, reference) < 1.0
+E   AssertionError: assert 1.0 < 1.0
+E    +  where 1.0 = compute_completeness('# Overview\n\n## Specifications', '# Overview\n\nThe product costs $1200.\n\n## Specifications\n\n32 GB RAM.')
+_______________ test_unrelated_heading_substring_must_not_match ________________
+eval/test_metrics.py:115: in test_unrelated_heading_substring_must_not_match
+    assert compute_completeness(output, reference) == 0.0
+E   AssertionError: assert 1.0 == 0.0
+E    +  where 1.0 = compute_completeness('# Artificial Intelligence', '# Art')
+______________ test_missing_http_status_must_not_count_as_success ______________
+eval/test_metrics.py:146: in test_missing_http_status_must_not_count_as_success
+    assert compute_error_rate([{"markdown": "Useful content"}]) == 1.0
+E   AssertionError: assert 0.0 == 1.0
+E    +  where 0.0 = compute_error_rate([{'markdown': 'Useful content'}])
+____________________ test_judge_should_include_ground_truth ____________________
+eval/test_metrics.py:168: in test_judge_should_include_ground_truth
+    assert reference in prompt
+E   assert 'The laptop costs $1200.' in "You are evaluating the quality of a web scraping engine's output.\nBelow is the scraper's markdown output for a webpage.\nRate the overall quality on a scale of 1-5, where 5 is excellent.\nConsider completeness, readability, and usefulness.\n\nOutput:\n---\nThe laptop costs $120.\n---\n\nRespond with only a single digit (1-5)."
+=========================== short test summary info ============================
+FAILED eval/test_metrics.py::test_missing_short_price_should_lower_score[compute_f1]
+FAILED eval/test_metrics.py::test_missing_short_price_should_lower_score[compute_f0_5]
+FAILED eval/test_metrics.py::test_numeric_corruption_must_lower_score[compute_f1]
+FAILED eval/test_metrics.py::test_numeric_corruption_must_lower_score[compute_f0_5]
+FAILED eval/test_metrics.py::test_duplicated_paragraph_must_lower_precision[compute_f1]
+FAILED eval/test_metrics.py::test_duplicated_paragraph_must_lower_precision[compute_f0_5]
+FAILED eval/test_metrics.py::test_missing_short_price_field_must_lower_recall
+FAILED eval/test_metrics.py::test_missing_body_text_must_lower_completeness
+FAILED eval/test_metrics.py::test_unrelated_heading_substring_must_not_match
+FAILED eval/test_metrics.py::test_missing_http_status_must_not_count_as_success
+FAILED eval/test_metrics.py::test_judge_should_include_ground_truth - assert ...
+======================== 11 failed, 10 passed in 4.21s =========================
